@@ -17,6 +17,13 @@ export default function TableListItem({ campaign, selectRow }: Props) {
   } ${date.getFullYear()}, ${date.getDate()}`;
   let diff = getDiffInDays(campaign.createdOn);
 
+
+
+  React.useEffect(()=>{
+    
+    
+  },[])
+
   return (
     <div className="table-item d-flex w-100 align-items-center">
       <div className="date">
