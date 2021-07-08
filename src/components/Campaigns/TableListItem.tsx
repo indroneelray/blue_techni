@@ -21,7 +21,7 @@ export default function TableListItem({ campaign, selectRow }: Props) {
 
   React.useEffect(()=>{
     
-    
+
   },[])
 
   return (
@@ -48,23 +48,23 @@ export default function TableListItem({ campaign, selectRow }: Props) {
       </div>
 
       <div className="view-pricing cursor-pointer" onClick={()=>selectRow(campaign)}>
-        <img src="/price.png" /> View Pricing
+        <img src="/assets/price.png" /> View Pricing
       </div>
 
       <div className="actions">
         <span>
-          <img src="/file.png" alt="csv" />
+          <img src="/assets/file.png" alt="csv" />
           &nbsp; CSV
         </span>
         <span>
-          <img src="/statistics-report.png" alt="report" />
+          <img src="/assets/statistics-report.png" alt="report" />
           &nbsp; Report
         </span>
         <span onClick={() => setDate(true)} className="position-relative">
-          <img src="/calendar.png" alt="calendar" />
+          <img src="/assets/calendar.png" alt="calendar" />
           &nbsp; Schedule Again
 
-        {showDate && <input type="date" ref={datePickerRef} className="position-absolute"/>}
+        {showDate && <input type="date" ref={datePickerRef} className="position-absolute" />}
 
         </span>
 

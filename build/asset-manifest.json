@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bluestacks/static/css/main.8aad561e.chunk.css",
-    "main.js": "/bluestacks/static/js/main.8261fad2.chunk.js",
-    "main.js.map": "/bluestacks/static/js/main.8261fad2.chunk.js.map",
+    "main.js": "/bluestacks/static/js/main.9b62cee2.chunk.js",
+    "main.js.map": "/bluestacks/static/js/main.9b62cee2.chunk.js.map",
     "runtime-main.js": "/bluestacks/static/js/runtime-main.b8d80ffd.js",
     "runtime-main.js.map": "/bluestacks/static/js/runtime-main.b8d80ffd.js.map",
     "static/js/2.818aa101.chunk.js": "/bluestacks/static/js/2.818aa101.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b8d80ffd.js",
     "static/js/2.818aa101.chunk.js",
     "static/css/main.8aad561e.chunk.css",
-    "static/js/main.8261fad2.chunk.js"
+    "static/js/main.9b62cee2.chunk.js"
   ]
 }

@@ -7,7 +7,7 @@ export default
         "price": "Price info of Test Whatsapp",
         "csv": "Some CSV link for Whatsapp",
         "report": "Some report link for Whatsapp",
-        "image_url":"/thumb1.png" 
+        "image_url":"/assets/thumb1.png" 
       },
       {
         "id":2,
@@ -17,7 +17,7 @@ export default
         "price": "Price info of Super Jewels Quest",
         "csv": "Some CSV link for Super Jewels Quest",
         "report": "Some report link for Super Jewels Ques",
-        "image_url":"/thumb2.png"
+        "image_url":"/assets/thumb2.png"
       },
       {
         "id":3,
@@ -27,7 +27,7 @@ export default
         "price": "Price info of Mole Slayer",
         "csv": "Some CSV link for Mole Slayer",
         "report": "Some report link for Mole Slayer",
-        "image_url":"/thumb3.png"
+        "image_url":"/assets/thumb3.png"
       },
       {
         "id":4,
@@ -37,7 +37,7 @@ export default
         "price": "Price info of Mancala Mix",
         "csv": "Some CSV link for Mancala Mix",
         "report": "Some report link for Mancala Mix",
-        "image_url":"/thumb4.png"
+        "image_url":"/assets/thumb4.png"
       },
       {
         "id":5,
@@ -47,7 +47,7 @@ export default
         "price": "Price info of Mancala Mix",
         "csv": "Some CSV link for Mancala Mix",
         "report": "Some report link for Mancala Mix",
-        "image_url":"/thumb5.png"
+        "image_url":"/assets/thumb5.png"
       },
       {
         "id":6,
@@ -57,6 +57,6 @@ export default
         "price": "Price info of Mancala Mix",
         "csv": "Some CSV link for Mancala Mix",
         "report": "Some report link for Mancala Mix",
-        "image_url":"/thumb6.png"
+        "image_url":"/assets/thumb6.png"
       }
     ]
