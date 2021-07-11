@@ -2,9 +2,6 @@ import localForage from "localforage";
 import { Campaign } from "../components/Campaigns/types";
 import data from "./store";
 const STORE_KEY = "campaign_store"
-const sortByDate = (a:Campaign, b:Campaign) => {
-  return a.campaignData - b.campaignData;
-};
 
 export default {
   initiateStore: async () => {
@@ -12,7 +9,7 @@ export default {
     if (store) {
       return store;
     } else {
-      await localForage.setItem("campaign_store", data.sort(sortByDate));
+      await localForage.setItem("campaign_store", data);
       return data;
     }
   },

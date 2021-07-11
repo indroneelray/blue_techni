@@ -15,7 +15,10 @@ export default function CampaignsTable({ data = [] }: Props) {
     setRow(campaign);
     setOpen(true);
   };
-
+  const sortByDate = (a:Campaign, b:Campaign) => {
+    return a.campaignData - b.campaignData;
+  };
+  
 
 
   return (
@@ -23,7 +26,7 @@ export default function CampaignsTable({ data = [] }: Props) {
       <TableHeader />
 
       <div className="table-body container-fluid">
-        {data.map((item, index) => {
+        {data.sort(sortByDate).map((item, index) => {
           return (
             <TableListItem
               key={item.id}
