@@ -1,7 +1,18 @@
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.cursor-pointer{
-    cursor:pointer
+.cursor-pointer {
+  cursor: pointer;
+}
+.generic-button {
+  margin: 0 auto !important;
+  border: 2px solid #181b34 !important;
+  display: block;
+  color: #181b34 !important;
+}
+
+
+.react-datepicker__navigation{
+    top:20px !important
 }

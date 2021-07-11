@@ -53,7 +53,7 @@ export default function Modal({ isOpen, setOpen, data }: Props): ReactElement {
               </ul>
             </div>
 
-            <button className="btn" onClick={() => setOpen(false)}>
+            <button className="btn generic-button" onClick={() => setOpen(false)}>
               Close
             </button>
           </div>

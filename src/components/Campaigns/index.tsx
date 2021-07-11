@@ -2,16 +2,43 @@ import React from "react";
 import CampaignsTable from "./CampaignsTable";
 import dataJson from "../../database/store";
 import { TABS } from "../../utils";
-import './Campaigns.css'
+import { CampaignContext } from "../../store";
+import "./Campaigns.css";
+import { Campaign as ICampaign } from "./types";
 
 export default function Campaign() {
   const [active, setActive] = React.useState<number>(TABS[0].value);
-  const [data, setData] = React.useState<any[]>(dataJson)
+  const [data, setData] = React.useState<ICampaign[]>([]);
 
+  const { campaigns, setCampaigns } = React.useContext(CampaignContext);
 
-  React.useEffect(()=>{
-    setData(data)
-  },[active])
+  const getTabWiseCampaign = (campaignType: number, campaigns: ICampaign[]) => {
+    let today = new Date().getTime() - 24*60*60*1000;
+    let todayTimeFrame = today + 24 * 60 * 60 * 1000; //24 hours
+    switch (campaignType) {
+      case TABS[0].value: {
+        //upcoming
+        return campaigns.filter((item) => item.campaignData > todayTimeFrame);
+      }
+      case TABS[1].value: {
+        //Live
+        return campaigns.filter(
+          (item) => item.campaignData >= today && item.campaignData <= todayTimeFrame
+        );
+      }
+
+      case TABS[2].value: {
+        //past
+        return campaigns.filter((item) => item.campaignData < today);
+      }
+    }
+  };
+
+  React.useEffect(() => {
+    let data = getTabWiseCampaign(active, campaigns);
+    console.log(data);
+    setData(data || []);
+  }, [active, campaigns]);
 
   return (
     <div className="container campaigns-container">
@@ -19,9 +46,13 @@ export default function Campaign() {
 
       <div className="tabs">
         <ul className="list-unstyled d-flex campaign-tabs-list">
-          {TABS.map((item,index) => {
+          {TABS.map((item, index) => {
             return (
-              <li key={index} className={item.value === active ? "active" : ""} onClick={()=>setActive(item.value)}>
+              <li
+                key={index}
+                className={item.value === active ? "active" : ""}
+                onClick={() => setActive(item.value)}
+              >
                 {item.label}
               </li>
             );

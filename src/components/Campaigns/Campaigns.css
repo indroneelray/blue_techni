@@ -53,14 +53,24 @@
     font-weight: 500;
 }
 
-.table-header > div:nth-child(odd),
-.table-body > .table-item > div:nth-child(odd) {
+.table-header > div:nth-child(1),
+.table-body > .table-item > div:nth-child(1) {
+    width:15%
+}
+
+
+.table-header > div:nth-child(2),
+.table-body > .table-item > div:nth-child(2) {
+    width:25%
+}
+.table-header > div:nth-child(3),
+.table-body > .table-item > div:nth-child(3) {
     width:20%
 }
 
-.table-header > div:nth-child(even), 
-.table-body > .table-item >  div:nth-child(even) {
-    width:30%
+.table-header > div:nth-child(4), 
+.table-body > .table-item >  div:nth-child(4) {
+    width:40%
 }
 
 .table-item{
@@ -81,8 +91,12 @@
 
 .table-item .actions img,
 .table-item .view-pricing img{
-    width:24px;
-    height:24px
+    width:20px;
+    /* height:24px */
+}
+
+.table-item .actions span{
+    margin-right:10px
 }
 
 

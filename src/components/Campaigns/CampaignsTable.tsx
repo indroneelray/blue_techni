@@ -15,6 +15,9 @@ export default function CampaignsTable({ data = [] }: Props) {
     setRow(campaign);
     setOpen(true);
   };
+
+
+
   return (
     <div className="campaigns-table w-100 my-5 ">
       <TableHeader />
@@ -22,9 +25,19 @@ export default function CampaignsTable({ data = [] }: Props) {
       <div className="table-body container-fluid">
         {data.map((item, index) => {
           return (
-            <TableListItem key={index} campaign={item} selectRow={selectRow} />
+            <TableListItem
+              key={item.id}
+              campaign={item}
+              selectRow={selectRow}
+              />
           );
         })}
+
+        {data.length === 0 && (
+          <p className="text-center font-italic py-5">
+            There are no campaigns to show
+          </p>
+        )}
       </div>
 
       <Modal isOpen={open} setOpen={setOpen} data={row} />
