@@ -17,15 +17,15 @@ export const months: string[] = [
 export const TABS = [
   {
     value:0,
-    label:"Upcoming Campaigns"
+    key:"upcoming_campaigns"
   },
   {
     value:1,
-    label:"Live Campaigns"
+    key:"live_campaigns"
   },
   {
     value:2,
-    label:"Past Campaigns"
+    key:"past_campaigns"
   }
 ]
 
@@ -36,7 +36,10 @@ export const TABS = [
  */
 export const getDiffInDays = (date: number) => {
   let today = new Date().getTime();
-  let diff = Math.floor((today - date) / (1000 * 3600 * 24));
-
-  return diff;
+  let diff = ((today - date) / (1000 * 3600 * 24)).toFixed(0);
+  console.log(diff)
+  return Number(diff);
 };
+
+
+

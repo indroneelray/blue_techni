@@ -15,31 +15,31 @@ export default function CampaignsTable({ data = [] }: Props) {
     setRow(campaign);
     setOpen(true);
   };
-  const sortByDate = (a:Campaign, b:Campaign) => {
+  const sortByDate = (a: Campaign, b: Campaign) => {
     return a.campaignData - b.campaignData;
   };
-  
-
 
   return (
     <div className="campaigns-table w-100 my-5 ">
       <TableHeader />
 
-      <div className="table-body container-fluid">
+      <div className="table-body row">
         {data.sort(sortByDate).map((item, index) => {
           return (
             <TableListItem
               key={item.id}
               campaign={item}
               selectRow={selectRow}
-              />
+            />
           );
         })}
 
         {data.length === 0 && (
-          <p className="text-center font-italic py-5">
-            There are no campaigns to show
-          </p>
+          <div className="col-12">
+            <p className="text-center font-italic py-5">
+              There are no campaigns to show
+            </p>
+          </div>
         )}
       </div>
 

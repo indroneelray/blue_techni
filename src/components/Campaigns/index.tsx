@@ -1,19 +1,19 @@
 import React from "react";
 import CampaignsTable from "./CampaignsTable";
-import dataJson from "../../database/store";
 import { TABS } from "../../utils";
 import { CampaignContext } from "../../store";
 import "./Campaigns.css";
 import { Campaign as ICampaign } from "./types";
+import { LocalizeContext } from "../../store/Localiser";
 
 export default function Campaign() {
   const [active, setActive] = React.useState<number>(TABS[0].value);
   const [data, setData] = React.useState<ICampaign[]>([]);
 
-  const { campaigns, setCampaigns } = React.useContext(CampaignContext);
-
+  const { campaigns } = React.useContext(CampaignContext);
+  const { messages } = React.useContext(LocalizeContext);
   const getTabWiseCampaign = (campaignType: number, campaigns: ICampaign[]) => {
-    let today = new Date().getTime() - 24*60*60*1000;
+    let today = new Date().getTime();
     let todayTimeFrame = today + 24 * 60 * 60 * 1000; //24 hours
     switch (campaignType) {
       case TABS[0].value: {
@@ -23,7 +23,8 @@ export default function Campaign() {
       case TABS[1].value: {
         //Live
         return campaigns.filter(
-          (item) => item.campaignData >= today && item.campaignData <= todayTimeFrame
+          (item) =>
+            item.campaignData >= today && item.campaignData <= todayTimeFrame
         );
       }
 
@@ -42,7 +43,7 @@ export default function Campaign() {
 
   return (
     <div className="container campaigns-container">
-      <h1 className="font-weight-bold my-4">Manage Campaigns</h1>
+      <h1 className="font-weight-bold my-4">{messages.manage_campaigns}</h1>
 
       <div className="tabs">
         <ul className="list-unstyled d-flex campaign-tabs-list">
@@ -53,7 +54,7 @@ export default function Campaign() {
                 className={item.value === active ? "active" : ""}
                 onClick={() => setActive(item.value)}
               >
-                {item.label}
+                {messages[item.key]}
               </li>
             );
           })}

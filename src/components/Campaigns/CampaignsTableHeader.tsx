@@ -1,20 +1,26 @@
 import React from "react";
+import { LocalizeContext } from "../../store/Localiser";
 
 export default function CampaignsTableHeader() {
+
+  const {messages} = React.useContext(LocalizeContext)
+
   return (
-    <div className="table-header d-flex align-items-center">
-      <div>
-        <span>Date</span>
+   <div className="container-fluid d-none d-lg-block">
+      <div className="table-header row align-items-center">
+      <div className="col-2">
+        <span>{messages.date}</span>
       </div>
-      <div>
-        <span>Campaign</span>
+      <div className="col-3">
+        <span>{messages.campaign}</span>
       </div>
-      <div>
-        <span>View</span>
+      <div className="col-2">
+        <span>{messages.view}</span>
       </div>
-      <div>
-        <span>Actions</span>
+      <div className="col-5">
+        <span>{messages.actions}</span>
       </div>
     </div>
+   </div>
   );
 }

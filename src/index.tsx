@@ -4,11 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StoreProvider } from "./store/index";
+import { LocalizeProvider } from "./store/Localiser";
+
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
-      <App />
+      <LocalizeProvider>
+        <App />
+      </LocalizeProvider>
     </StoreProvider>
   </React.StrictMode>,
   document.getElementById("root")
