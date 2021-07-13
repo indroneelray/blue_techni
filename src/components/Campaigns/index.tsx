@@ -62,6 +62,15 @@ export default function Campaign() {
       </div>
 
       <CampaignsTable data={data} />
+
+      <p className="text-right">
+        <a
+          target="_blank"
+          href="https://docs.google.com/spreadsheets/d/1ozLQ3lveUg2aiCcuwxYjv6yQsI1IqVtA_2nekTmgHs0/edit?usp=sharing"
+        >
+          Test Cases
+        </a>
+      </p>
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function CampaignsTable({ data = [] }: Props) {
   };
 
   return (
-    <div className="campaigns-table w-100 my-5 ">
+    <div className="campaigns-table w-100 mt-5 mb-2 ">
       <TableHeader />
 
       <div className="table-body row">
